@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>M8-Creasoul</title>
+  </head>
+  <body>
+    <script>
+/*variantas A, Skaiciu ivedimas ir jus sumos atspausdinimas*/
+/*
+    do {
+      var a=prompt ("ivesk skaiciu a");
+      a=parseInt (a)
+    } while (isNaN(a));
+    do {
+      var b=prompt ("ivesk skaiciu b");
+      b=parseInt (b)
+    } while (isNaN(b));
+    do {
+      var c=prompt ("ivesk skaiciu c");
+      c=parseInt (c)
+    } while (isNaN(c));
+    do {
+      var d=prompt ("ivesk skaiciu d");
+      d=parseInt (d)
+    } while (isNaN(d));
+      console.log(a+"+"+b+"+"+c+"+"+d+"="+(a+b+c+d));
+*/
+
+/*variantas B, keliu skaiciu ivedimas naudojant funkcija*/
+/*
+      function numberInput(msg, prReiksme) {
+        do {
+          var s=prompt (msg, prReiksme);
+          s=parseInt (s);
+        } while (isNaN(s));
+        return s;
+      }
+      var s1=numberInput ("Ivesk 1-a skaiciu", 0);
+      var s2=numberInput ("Ivesk 2-a skaiciu", 5);
+      var s3=numberInput ("Ivesk 3-a skaiciu", 2);
+      var s4=numberInput ("Ivesk 4-a skaiciu", 3);
+      console.log(s1+"+"+s2+"+"+s3+"+"+s4+"="+(s1+s2+s3+s4));
+*//*arba*//*
+      function numberInput(n, prReiksme) {
+        do {
+          var s=prompt ("Ivesk "+n+" skaiciu", prReiksme);
+          s=parseInt (s);
+        } while (isNaN(s));
+        return s;
+      }
+      var s1=numberInput ("1-a", 0);
+      var s2=numberInput ("2-a", 0);
+      var s3=numberInput ("3-a", 0);
+      var s4=numberInput ("4-a", 0);
+      console.log(s1+"+"+s2+"+"+s3+"+"+s4+"="+(s1+s2+s3+s4));
+**//*arba*//*
+      function numberInput(n, prReiksme) {
+        do {
+          var s=prompt ("Ivesk "+n+" skaiciu", prReiksme);
+          s=parseInt (s);
+        } while (isNaN(s));
+        return s;
+      }
+      var f=numberInput;
+      var s1=f ("1-a",0);
+      var s2=f ("2-a", 0);
+      var s3=f ("3-a", 0);
+      var s4=f ("4-a", 0);
+      console.log(s1+"+"+s2+"+"+s3+"+"+s4+"="+(s1+s2+s3+s4));
+*/
+
+/*atspausdinti masyvo elementus is eiles
+      var m=["pirmas","antras","trecias",5,true,10,"septintas","astuntas",9,"10-as"];
+      for (var i=0; i < m.length; i++) {
+        console.log(m[i]);
+      }
+*/
+
+/*
+      function numberInput(msg) {
+        do {
+          var s=prompt (msg);
+          s=parseInt (s);
+        } while (isNaN(s));
+        return s;
+      }
+      var n=numberInput ("Kiek skaiciu ivesite?");
+      var s=[];
+      for (var i = 1; i <= n; i++) {
+        s.push (numberInput("ivesk skaiciu "+i));
+      }
+      var suma=0;
+      for ( i = 0; i < s.length; i++) {
+        suma+=s[i];
+      }
+      console.log(suma);
+*/
+
+/*
+      function printParam(){
+        for (var i = 0; i < arguments.length; i++) {
+          console.log(arguments[i],typeof(arguments[i]));
+        }
+      }
+      printParam (3,true,"a")
+*/
+
+/*
+      var m1={
+        g:"mazda",
+        s:"pilka",
+        metai:"2005",
+        modelis:"3",
+      }
+      console.log(m1.s);
+      var savybe="metai"
+      console.log(m1[savybe]);
+      for (var key in m1) {
+        console.log(m1[key]);
+      }
+*/
+
+/*Rock, paper,scissors
+  // User choice
+  do {
+    var userChoice;
+    do {
+      userChoice=prompt ("rock, paper, scissors?")
+    } while (userChoice!="rock"&&userChoice!="paper"&&userChoice!="scissors"&&userChoice!=null);
+    if (userChoice) {
+      var computerChoise=Math.random ();
+      if (computerChoise < 0.33) {
+        computerChoise="rock"
+      } else if (computerChoise<0.66) {
+        computerChoise="paper"
+      } else {
+        computerChoise="scissors"
+      }
+      console.log("Your choise "+userChoice);
+      console.log("Computer choise "+computerChoise);
+      if (userChoice==computerChoise) {
+        console.log("draw");
+      } else if ((userChoice=="rock"&&computerChoise=="scissors")||
+                (userChoice=="paper"&&computerChoise=="rock")||
+                (userChoice=="scissors"&&computerChoise=="paper")){
+        console.log("You win");
+      } else {
+        console.log("You loose");
+      }
+    }
+  } while (userChoice);
+    console.log("pabaiga");
+*/
+
+/*Rekursija
+function liekana (dalinys, daliklis) {
+  if (dalinys < daliklis) {
+    return dalinys;
+  }
+  return liekana (dalinys - daliklis, daliklis)
+}
+console.log(liekana(7,3));
+*/
+
+/*
+//REKURSIJOS pavyzdys su objektais ir masyvais, bei apsisaugojimu nuo amzinos rekursijos
+var m1 = ["pirmas keleivis","antras keleivis", "trecias keleivis"]
+var obj1 = {
+  g:"mazda",
+  s:"pilka",
+  metai:"2005",
+  modelis:"3",
+  m1,
+  variklis:{
+    tipas:"dyzelinis",
+    turis:"2.0"
+  }
+}
+obj1.variklis.m2 = obj1;
+obj1.variklis.m3 = "aaaa";
+obj1.variklis.m4 = 555;
+function print(p, path) {
+  if (typeof p==="string" || typeof p==="number" || typeof p==="boolean" || typeof p==="undefined" || p===null) {
+    console.log (p,typeof p);
+  } else if (typeof p==="function") {
+    console.log (p.toString());
+  } else if (typeof p==="object") {
+    //irasome ir tikrinam path
+    if (!Array.isArray(path)) {
+      path = []
+    }
+    for (var i = 0; i < path.length; i++) {
+      if (path[i] === p) {
+        console.log("Circular Reference");
+        return;
+      }
+    }
+    path.push(p);
+    //tikriname masyva
+    if (Array.isArray(p)) {
+      console.log ("masyvas");
+      for (var i = 0; i < p.length; i++) {
+        console.log (i);
+        print (p[i],path)
+      }
+    } else {
+      for (var key in p){
+        console.log (key);
+        print (p[key],path);
+      }
+    }
+    //pasalinam path
+    path.pop ();
+  } else {
+    console.log("nezinoma reiksme");
+  }
+}
+print ("hello world")
+print (100);
+print (null);
+print ();
+print (obj1)
+*/
+/*
+console.log(a);
+var a=5;
+console.log(a);
+testas ("hello");
+function testas(msg) {
+  console.log(msg);
+}
+const O = {
+  p1: "testas",
+  p2: 10
+}
+console.log(O);
+O.p1 = "kitas";
+O.p3 = false;
+console.log(O);
+*/
+/* funkcija funkcijoj
+function test() {
+  var a=10;
+  a=a+10;
+  function inner() {
+    b=10
+    var b=b+a;
+    return b;
+  }
+  a=a+inner();
+  return a;
+}
+console.log(test());
+console.log(inner());
+*/
+
+/*TASK - The longest sentence. isrusiuoti nuo inlgiausio iki mtrumpiausio sakinio
+var phrases =
+[
+    "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+    "Aenean commodo ligula eget dolor. Aenean massa.",
+    "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+    "Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
+    "Nulla consequat massa quis enim.",
+    "Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.",
+    "In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
+    "Nullam dictum felis eu pede mollis pretium.",
+    "Integer tincidunt. Cras dapibus.",
+    "Vivamus elementum semper nisi.",
+    "Aenean vulputate eleifend tellus.",
+    "Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.",
+    "Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.",
+    "Phasellus viverra nulla ut metus varius laoreet.",
+    "Quisque rutrum. Aenean imperdiet.",
+    "Etiam ultricies nisi vel augue.",
+    "Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus.",
+    "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+    "Aenean commodo ligula eget dolor. Aenean massa.",
+    "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus.",
+    "Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
+    "Nulla consequat massa quis enim.",
+    "Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.",
+    "In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
+    "Nullam dictum felis eu pede mollis pretium.",
+    "Integer tincidunt. Cras dapibus.",
+    "Vivamus elementum semper nisi.",
+    "Aenean vulputate eleifend tellus.",
+    "Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.",
+    "Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.",
+    "Phasellus viverra nulla ut metus varius laoreet.",
+    "Quisque rutrum. Aenean imperdiet.",
+    "Etiam ultricies nisi vel augue.",
+    "Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus.",
+    "Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit ipsuminus max.",
+    "Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.",
+    "Maecenas nec odio et ante tincidunt tempus.",
+    "Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante.",
+    "Etiam sit amet orci eget eros faucibus tincidunt. Duis leo.",
+    "Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna.",
+    "Sed consequat, leo eget bibendum sodales, augue velit cursus nunc."
+];
+for (let i = 0; i < phrases.length-1; i++) {
+  for (let j = i+1; j < phrases.length; j++) {
+    if (phrases[i].length < phrases[j].length) {
+      let tmp = phrases[i];
+      phrases[i] = phrases[j]
+      phrases[j] = tmp;
+    }
+  }
+}
+for (var c=0; c < phrases.length; c++) {
+  var count = phrases[c].length;
+  console.log(phrases[c],count);
+}
+*/
+//JSON.stringify - objekto pavertimas stringu, ir JSON.parse - stringo pavertimas objektu
+let o = {
+  p1:"testas",
+  p2:true
+}
+console.log(JSON.stringify(o));
+
+let s='{"p1":"test","p2":"true"}';
+let o1 = JSON.parse(s);
+console.log(o1);
+
+    </script>
+  </body>
+</html>
